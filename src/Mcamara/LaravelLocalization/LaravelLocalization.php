@@ -140,7 +140,7 @@ class LaravelLocalization
         $this->url = $url;
 
         // set default locale
-        $this->defaultLocale = $this->configRepository->get('app.locale');
+        $this->defaultLocale = $this->configRepository->get('app.locale') ?? 'ua';
         $supportedLocales = $this->getSupportedLocales();
 
         if (empty($supportedLocales[$this->defaultLocale])) {
